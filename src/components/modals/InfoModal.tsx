@@ -8,10 +8,10 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="Como se juega esto" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the word in 6 tries. After each guess, the color of the tiles will
-        change to show how close your guess was to the word.
+        Adivina la palabra en 6 intentos. Despues de cda intento, el color de las fichas
+        cambiara para mostrar que tan cerca estas de adivinar la palabra.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -27,7 +27,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="Y" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
+        La letra W esta en la palabra y en la posicion correcta.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -43,7 +43,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="T" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
+        La letra L esta en la palabra pero en la posicion incorrecta.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -54,14 +54,14 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="E" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
+        La letra U no esta en la palabra y en ninguna posicion.
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is an open source version of the word guessing game we all know and
-        love -{' '}
+        Esta es una version de codigo abierto para Asilo Digital, del juego de adivinar palabras 
+        que todos conocemos y amamos -{' '}
         <a
-          href="https://github.com/cwackerfuss/react-wordle"
+          href="https://github.com/andres15alvarez/asilo-wordle"
           className="underline font-bold"
         >
           check out the code here
