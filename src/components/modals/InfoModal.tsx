@@ -64,7 +64,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           href="https://github.com/andres15alvarez/asilo-wordle"
           className="underline font-bold"
         >
-          check out the code here
+          puedes vacilarte el codigo aquí
         </a>{' '}
       </p>
     </BaseModal>
