@@ -1,6 +1,6 @@
 import { getGuessStatuses } from './statuses'
 import { solutionIndex, unicodeSplit } from './words'
-import { GAME_TITLE } from '../constants/strings'
+import { ASILO_HASHTAG, ASILO_USER_NAME, GAME_TITLE } from '../constants/strings'
 import { MAX_CHALLENGES } from '../constants/settings'
 import { UAParser } from 'ua-parser-js'
 
@@ -21,7 +21,8 @@ export const shareStatus = (
     `${GAME_TITLE} ${solutionIndex} ${
       lost ? 'X' : guesses.length
     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
-    generateEmojiGrid(guesses, getEmojiTiles(isDarkMode, isHighContrastMode))
+    generateEmojiGrid(guesses, getEmojiTiles(isDarkMode, isHighContrastMode)) + '\n' +
+    `${ASILO_HASHTAG} ${ASILO_USER_NAME}`
 
   const shareData = { text: textToShare }
 
