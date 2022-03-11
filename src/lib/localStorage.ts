@@ -1,5 +1,8 @@
+import SecureLS from "secure-ls"
+
 const gameStateKey = 'gameState'
 const highContrastKey = 'highContrast'
+const ls = new SecureLS({encodingType: 'aes', encryptionSecret: process.env.SECRET_KEY})
 
 type StoredGameState = {
   guesses: string[]
@@ -7,11 +10,13 @@ type StoredGameState = {
 }
 
 export const saveGameStateToLocalStorage = (gameState: StoredGameState) => {
-  localStorage.setItem(gameStateKey, JSON.stringify(gameState))
+  ls.set(gameStateKey, JSON.stringify(gameState))
+  // localStorage.setItem(gameStateKey, JSON.stringify(gameState))
 }
 
 export const loadGameStateFromLocalStorage = () => {
-  const state = localStorage.getItem(gameStateKey)
+  // const state = localStorage.getItem(gameStateKey)
+  const state = ls.get(gameStateKey)
   return state ? (JSON.parse(state) as StoredGameState) : null
 }
 
