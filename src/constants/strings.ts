@@ -1,4 +1,5 @@
-export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
+export const GAME_TITLE = 'Asilordle'
+export const REACT_APP_LOCALE_STRING = ''
 
 export const WIN_MESSAGES = ['Buen trabajo pana', 'Chevere', 'Klidad']
 export const GAME_COPIED_MESSAGE = 'Copiado al portapapeles'
