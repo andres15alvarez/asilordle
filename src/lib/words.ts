@@ -1,6 +1,6 @@
 import { WORDS } from '../constants/wordlist'
 import { VALID_GUESSES } from '../constants/validGuesses'
-import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
+import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE, REACT_APP_LOCALE_STRING } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
 
@@ -63,14 +63,14 @@ export const unicodeLength = (word: string) => {
 }
 
 export const localeAwareLowerCase = (text: string) => {
-  return process.env.REACT_APP_LOCALE_STRING
-    ? text.toLocaleLowerCase(process.env.REACT_APP_LOCALE_STRING)
+  return REACT_APP_LOCALE_STRING
+    ? text.toLocaleLowerCase(REACT_APP_LOCALE_STRING)
     : text.toLowerCase()
 }
 
 export const localeAwareUpperCase = (text: string) => {
-  return process.env.REACT_APP_LOCALE_STRING
-    ? text.toLocaleUpperCase(process.env.REACT_APP_LOCALE_STRING)
+  return REACT_APP_LOCALE_STRING
+    ? text.toLocaleUpperCase(REACT_APP_LOCALE_STRING)
     : text.toUpperCase()
 }
 
