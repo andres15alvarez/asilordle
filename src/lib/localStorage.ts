@@ -1,6 +1,6 @@
 import SecureLS from "secure-ls"
 
-const gameStateKey = 'gameState'
+const gameStateKey = 'gameStateEncrypted'
 const highContrastKey = 'highContrast'
 const ls = new SecureLS({encodingType: 'aes', encryptionSecret: process.env.SECRET_KEY})
 
