@@ -18,9 +18,7 @@ export const shareStatus = (
   handleShareToClipboard: () => void
 ) => {
   const textToShare =
-    `${GAME_TITLE} ${solutionIndex} ${
-      lost ? 'X' : guesses.length
-    }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
+    `${GAME_TITLE} ${lost ? 'X' : guesses.length}/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
     generateEmojiGrid(guesses, getEmojiTiles(isDarkMode, isHighContrastMode)) + '\n\n' +
     `${ASILO_HASHTAG} ${ASILO_USER_NAME}\n` +
     `${ASILO_WORDLE_URL}`
