@@ -4,6 +4,7 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { SettingsModal } from './components/modals/SettingsModal'
+import { GoodbyeModal } from './components/modals/GoodbyeModal'
 import {
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
@@ -25,6 +26,7 @@ import {
   solution,
   findFirstUnusedReveal,
   unicodeLength,
+  isValidIndexWord,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
@@ -52,6 +54,7 @@ function App() {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
+  const [isGoodbyeModalOpen, setIsGoodbyeModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(
@@ -98,6 +101,13 @@ function App() {
       setTimeout(() => {
         setIsInfoModalOpen(true)
       }, WELCOME_INFO_MODAL_MS)
+    }
+  }, [])
+
+  useEffect(() => {
+    // if there is no more words to guess
+    if (!isValidIndexWord()) {
+      setIsGoodbyeModalOpen(true)
     }
   }, [])
 
@@ -289,6 +299,10 @@ function App() {
           handleDarkMode={handleDarkMode}
           isHighContrastMode={isHighContrastMode}
           handleHighContrastMode={handleHighContrastMode}
+        />
+        <GoodbyeModal
+          isOpen={isGoodbyeModalOpen}
+          handleClose={() => setIsGoodbyeModalOpen(false)}
         />
         <AlertContainer />
       </div>
