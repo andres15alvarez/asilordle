@@ -88,4 +88,9 @@ export const getWordOfDay = () => {
   }
 }
 
+export const isValidIndexWord = () => {
+  let { solution, solutionIndex, tomorrow } = getWordOfDay()
+  return solutionIndex <= WORDS.length - 1
+}
+
 export const { solution, solutionIndex, tomorrow } = getWordOfDay()
