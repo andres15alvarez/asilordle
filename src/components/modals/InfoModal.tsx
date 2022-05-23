@@ -10,7 +10,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="Como se juega esto" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Adivina la palabra en 6 intentos. Despues de cda intento, el color de las fichas
+        Adivina la palabra en 6 intentos. Despues de cada intento, el color de las fichas
         cambiara para mostrar que tan cerca estas de adivinar la palabra.
       </p>
 
