@@ -86,7 +86,7 @@ export const WORDS = [
   'bezos',
   'chain',
   'shift',
-  'móvil',
+  'movil',
   'smart',
   'crear',
   'index'

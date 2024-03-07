@@ -58,10 +58,9 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        Esta es una version de codigo abierto para Asilo Digital, del juego de adivinar palabras 
-        que todos conocemos y amamos -{' '}
+        Esta es una version de codigo abierto para Asilo Digital - {' '}
         <a
-          href="https://github.com/andres15alvarez/asilo-wordle"
+          href="https://github.com/andres15alvarez/asilordle"
           className="underline font-bold"
         >
           puedes vacilarte el codigo aquí
